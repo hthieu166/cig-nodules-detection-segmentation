@@ -19,7 +19,7 @@ from src.models.base_model import BaseModel
 import ipdb
 
 class FasterRCNN(BaseModel):
-    def __init__(self, device, base, n_classes = 1000, pretrained = True, retrain_base = False):
+    def __init__(self, device, n_classes = 1000, pretrained = True, retrain_base = False):
         """Initialize the model
 
         Args:
@@ -30,7 +30,6 @@ class FasterRCNN(BaseModel):
         super().__init__(device)
 
         self.n_classes = n_classes
-        self.base = base
         self.retrain_base = retrain_base
         self.pretrained = pretrained
         self.build_model()
@@ -48,7 +47,7 @@ class FasterRCNN(BaseModel):
         """Build model architecture
         """
         # load an instance segmentation model pre-trained on COCO
-        self.model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=True)
+        self.model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=self.pretrained)
         # get the number of input features for the classifier
         in_features = self.model.roi_heads.box_predictor.cls_score.in_features
         # replace the pre-trained head with a new one
