@@ -1,0 +1,4 @@
+model_name: 'FasterRCNN'
+model_params:
+  base: resnet50
+  n_classes: 2

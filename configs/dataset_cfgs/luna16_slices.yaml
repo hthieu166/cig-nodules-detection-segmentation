@@ -1,0 +1,16 @@
+dataset_name: 'LUNA16SLICES'
+dataset_params:
+    data_root: '../luna16_slices/images/'
+    spldata_dir:
+      train_val: 
+        train: ''
+        val:   ''
+      test:
+        test:  ''
+    lbl_fname: '../luna16_slices/luna16_nodules_lbl_converted.csv'
+    datalst_pth:
+      train_val:
+        train: './dataset_splits/luna16/train.lst'
+        val:   './dataset_splits/luna16/val.lst'
+      test:
+        test:  './dataset_splits/luna16/val.lst'

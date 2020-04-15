@@ -1,0 +1,12 @@
+dataset_name: 'LUNA16'
+dataset_params:
+    data_root: '../luna16/subsets/'
+    spldata_dir: 
+        train: ''
+        val:   ''
+        test:  ''
+    lbl_fname: '../luna16/annotations.csv'
+    datalst_pth:
+        train: './dataset_splits/luna16/all.lst'
+    #     val:   './dataset_splits/aic20_vehicle_type/val.lst'
+    #     test:  './dataset_splits/aic20_vehicle_type/test.lst'

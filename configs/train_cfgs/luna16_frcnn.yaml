@@ -1,0 +1,21 @@
+batch_size: 8
+n_epochs: 10
+decay_epochs: [3,6,9]
+momentum: 0.9
+init_lr: 0.005
+weight_decay: 0.0005  # weight decaying rate
+lr_decay: 0.1  # decaying rate for learning rate
+n_epochs_to_log: 2
+transforms: #data augmentation 
+  base:
+    to_tensor:
+  train_val/train:
+    to_tensor:
+    horizon_flip:
+      p: 0.5
+    # normalize:
+    #   mean: [0.485, 0.456, 0.406]
+    #   std: [0.229, 0.224, 0.225]
+# loss_fn: 
+  # CrossEntropy: ""
+# task: image_detection
