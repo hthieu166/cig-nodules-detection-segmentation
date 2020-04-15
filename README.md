@@ -1,8 +1,7 @@
 # CIG - Nodules Detection and Segmentation on LUNA16
-------
 Faster R-CNN and Mask R-CNN for nodules detection and segmentation on LUNA 16 Dataset 
 ## Installation
-----
+------
 ### Environment & Dependencies
 A conda environment file info `environment.yml`, and dependencies `requirements.txt` are given, to install all requires packages:
 ```
@@ -34,9 +33,10 @@ Modify the paths in the following file, with new directory (if necessary):
 configs/dataset_cfgs/luna16_slices.yaml
 ```
 
-### Training & Testing
+## Training & Testing
 ------
 For your convenience, the default `GPU_ID` and `N_WORKERS` can be assigned under `scripts/master_env.sh` 
+
 **To train:**
 ```
 $ ./scripts/luna16_frcnn_train.sh ${GPU_ID}
@@ -64,14 +64,17 @@ IoU metric: bbox
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = -1.000
 
 ```
-#### Tools & Visualization
+## Tools & Visualization
 ----
 Tools for spliting training-validation sets, and prediction visualization are given in
 `LUNA16_tools.ipynb`
 
-#### Notes:
+![picture](images/frcnn.png)
+
+## Notes:
 ----
 If you want to modify the codes, create your new banch and do not push it on master.
+
 If you want to use your own model, loss, sampling objects, data augmentation strategy, etc. You can implement them inside the corrresponding folders inside `src/`. Remember to follow the interfaces and registered them under:
 ```
 src/factories.py
