@@ -1,0 +1,5 @@
+model_name: 'FasterRCNN'
+model_params:
+  backbone: efficientnet-b0
+  anchor_size: [8, 16, 32, 64, 128,]
+  n_classes: 2

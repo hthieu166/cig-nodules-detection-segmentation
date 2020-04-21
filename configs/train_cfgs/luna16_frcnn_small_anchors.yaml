@@ -1,11 +1,11 @@
 batch_size: 8
-n_epochs: 10
-decay_epochs: [3,6,9]
+n_epochs: 12
+decay_epochs: [4,7,10]
 momentum: 0.9
 init_lr: 0.005
 weight_decay: 0.0005  # weight decaying rate
 lr_decay: 0.1  # decaying rate for learning rate
-n_epochs_to_log: 2
+n_epochs_to_log: 3
 transforms: #data augmentation 
   base:
     to_tensor:

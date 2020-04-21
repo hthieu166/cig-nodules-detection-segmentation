@@ -1,0 +1,6 @@
+model_name: 'FasterRCNN'
+model_params:
+  backbone: resnet50
+  anchor_size: [8, 16, 32, 64, 128, 256]
+  aspect_ratios: [0.5, 1.0, 2.0]
+  n_classes: 2

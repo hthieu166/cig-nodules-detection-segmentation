@@ -67,7 +67,7 @@ def parse_args():
         '-w', '--num_workers', type=int, default=4,
         help='Number of threads for data loading')
     parser.add_argument(
-        '-g', '--gpu_id', type=int, default=-1,
+        '-g', '--gpu_id', type=str, default='-1',
         help='Which GPU to run the code')
 
     parser.add_argument(
@@ -101,10 +101,13 @@ def main():
     train_params = ConfigLoader.load_train_cfg(args.train_cfg)
     
     # Set up device (cpu or gpu)
-    if args.gpu_id < 0:
+    if args.gpu_id == '-1':
         device = torch.device('cpu')
     else:
-        device = torch.device('cuda', args.gpu_id)
+        os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   # see issue #152
+        os.environ["CUDA_VISIBLE_DEVICES"]= str(args.gpu_id)
+        device = torch.device('cuda')
+
     cfg.device = device
     logger.info('Using device: %s' % device)
 
@@ -161,8 +164,8 @@ def main():
 
 if __name__ == '__main__':
     # Fix random seeds here for pytorch and numpy
-    torch.manual_seed(1)
-    np.random.seed(2)
+    # torch.manual_seed(1)
+    # np.random.seed(2)
 
     # Parse input arguments
     args = parse_args()

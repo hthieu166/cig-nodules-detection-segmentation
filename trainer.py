@@ -63,9 +63,9 @@ def train(model, optimizer, criterion, loaders, logdir,
         # Training phase
         train_loader = loaders['train']
         run_iter = epoch * len(train_loader)
-        
+
         #train_one_epoch from torchvision.detection:
-        train_one_epoch(model, optimizer, train_loader, device, epoch, print_freq=10)
+        train_one_epoch(model, optimizer, train_loader, device, epoch, print_freq=50)
         
         
         # Validation phase
@@ -74,10 +74,10 @@ def train(model, optimizer, criterion, loaders, logdir,
         # t = evaluate(model, val_loader, device=device)
         
         # Log using Tensorboard
-        
         # writer.add_scalars('losses', {'train': train_loss, 'val': val_loss}, epoch)
         # writer.add_scalar('val_score', val_score, epoch)
-
+        val_loader = loaders['val']
+        evaluate(model, val_loader, device=device)
         # Save training results when necessary
         if (epoch+1) % train_params['n_epochs_to_log'] == 0:
             MiscUtils.save_progress(model, optimizer, logdir, epoch)
