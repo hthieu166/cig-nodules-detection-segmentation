@@ -60,8 +60,11 @@ IoU metric: bbox
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.350
  Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = -1.000
-
 ```
+## Pretrained Model
+
+Download pretrained model on LUNA16 Dataset, with ResNet101 backbone [Google Drive](https://drive.google.com/file/d/1hIoX6u9Va0tirH9djzw0w7Z1gAOazUm_/view?usp=sharing)
+
 ## Tools & Visualization
 Tools for spliting training-validation sets, and prediction visualization are given in
 `LUNA16_tools.ipynb`
