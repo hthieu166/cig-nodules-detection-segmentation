@@ -12,6 +12,8 @@ sys.path.insert(0, os.path.abspath(
 """ > Import your datasets here """
 from src.datasets.luna16 import Luna16Dataset
 from src.datasets.luna16_slices import Luna16Slices
+from src.datasets.dcm import DCMSlices
+
 """ > Import your models here """
 from src.models.detectors.faster_r_cnn import FasterRCNN
 
@@ -82,7 +84,8 @@ class DatasetFactory(BaseFactory):
         self.info_msg = 'Generating dataset'
         self.objfn_dict = {
             'LUNA16': Luna16Dataset,
-            'LUNA16SLICES': Luna16Slices
+            'LUNA16SLICES': Luna16Slices,
+            'DCM': DCMSlices
         }
 
 class DataAugmentationFactory(BaseFactory):

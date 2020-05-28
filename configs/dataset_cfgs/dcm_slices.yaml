@@ -1,0 +1,16 @@
+dataset_name: 'DCM'
+dataset_params:
+    data_root: '/media/nlst-data/nlst-ct/100004/T0/1.2.840.113654.2.55.195946682403058845904768502826466194287/'
+    spldata_dir:
+      train_val: 
+        train: ''
+        val:   ''
+      test:
+        test:  ''
+    lbl_fname: ''
+    datalst_pth:
+      train_val:
+        train: ''
+        val:   ''
+      test:
+        test:  './dataset_splits/dcm/val.lst'
