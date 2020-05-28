@@ -61,6 +61,12 @@ IoU metric: bbox
  Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = -1.000
 ```
+**To evaluate with DICOM folder:**
+Change the DICOM folder path by changing data_root in configs/dataset_cfgs/dcm_slices.yaml then run:
+```
+$ ./scripts/dcm_frcnn_eval.sh ${GPU_ID}
+```
+
 ## Pretrained Model
 
 Download pretrained model on LUNA16 Dataset, with ResNet101 backbone [Google Drive](https://drive.google.com/file/d/1hIoX6u9Va0tirH9djzw0w7Z1gAOazUm_/view?usp=sharing)
